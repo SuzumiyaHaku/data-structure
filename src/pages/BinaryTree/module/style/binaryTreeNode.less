@@ -1,0 +1,64 @@
+.binary-tree-node {
+  // border: 1px solid #000;
+
+  .top {
+    position: relative;
+    height: 150px;
+    
+    &.left-branch {
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        content: "";
+        background: url(../../../../../static/bg/binary-bg.svg) no-repeat;
+        background-size: 100% 100%;
+        transform: rotateY(180deg);
+        pointer-events: none;
+      }
+    }
+
+    &.right-branch {
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        content: "";
+        background: url(../../../../../static/bg/binary-bg.svg) no-repeat;
+        background-size: 100% 100%;
+        pointer-events: none;
+      }
+    }
+
+
+    .value {
+      position: relative;
+      max-width: 50px;
+      max-height: 50px;
+      margin: 0 auto;
+      
+      line-height: 50px;
+      text-align: center;
+      border: 1px solid #000;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    &.on {
+      .value {
+        background: orange;
+      }
+    }
+  }
+  .child {
+    display: flex;
+    
+    & > div {
+      width: 50%;
+    }
+  }
+}
